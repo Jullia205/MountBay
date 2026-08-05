@@ -1,0 +1,144 @@
+:root {
+    
+  --color-bg: #f5f5f5;
+  --color-primary: #000000;
+  --color-secondary: #537e72;
+  --color-outline: #9cc97f;
+  --color-text: #ffffff;
+  --color-text-sec: #cddecb;
+  --color-extra: #091908;
+
+
+  --font-title: "Baskervville", serif; 
+  --font-body: "Cormorant Garamond", serif;
+  
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lmd: 1.1rem;
+  --fs-lg: 1.5rem;
+  --fs-lgg: 2rem;
+  --fs-xl: clamp(2.5rem, 6vw, 4rem);
+  --fs-xxl: clamp(4.5rem, 9vw, 8rem);
+}
+body{
+    margin: 0;
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+    font-family: var(--font-body);
+
+
+}
+
+#main{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(36,1fr);
+    grid-template-rows: repeat(5,1fr);
+    height: 100vh;
+}
+.room{
+    grid-column: 3/span 20;
+    grid-row: 1/span 3;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 1rem;
+}
+#img-cabin-one{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    grid-column: 1/span 3;
+    grid-row: 1/span 4;
+}
+#img-bathtub{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    grid-column: 4/span 2;
+    grid-row: 1/span 2;
+}
+#img-kitchen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    grid-column: 4/span 2;
+    grid-row: 3/span 2;
+}
+.room h3{
+    font-family: var(--font-title);
+    font-size: var(--fs-lgg );
+    font-weight: 500;
+    line-height: 2.0;
+    letter-spacing: 0.1rem;
+    margin: 0;
+    grid-column: 1/span 4;
+    grid-row: 5/span 1;
+}
+.room-info{
+    grid-column: 3/span 20;
+    grid-row: 4/span 1;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+.info-boxes{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.i-box{
+    background-color: var(--color-text-sec);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+.i-box p{
+    margin: 0;
+    color: var(--color-extra);
+
+}
+.room-info h4{
+    font-size: var(--fs-md);
+    font-weight: 550;
+    line-height: 2.0;
+    color: var(--color-extra);
+    margin: 1em 0;
+
+}
+.info-services{
+    width: 100%;
+}
+.info-services ul{
+    font-size: var(--fs-md);
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    margin: 0;
+    padding-left: 0;
+    gap: 1em;
+}
+.info-services ul li{
+    list-style: none;
+
+}
+.price{
+    grid-column: 24/ span 10;
+    grid-row: 1/ span 5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-outline);
+    border-radius: 12px;
+    padding: 1rem;
+
+}
+.form{
+    width: 100%;
+    height: 100%;
+}
+input{
+    
+}
