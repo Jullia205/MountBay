@@ -56,11 +56,10 @@ body{
     display: flex;
     align-items: center;
     height: 3.5rem;
+    margin-top: 1rem;
     background-color: rgba(0, 0, 0, 0.6);
     border: 0px solid black;
     border-radius: 12px;
-    margin-top: 1rem;
-    
 }
 .nav-container{
     display: flex;
@@ -68,11 +67,10 @@ body{
     padding: 1rem;
     align-items: center;
     width: 100%;
-    color: var(--color-text);
     font-size: var(--fs-sm);
     letter-spacing: 0.1rem;
 }
-.nav-container button{
+.nav-button{
     font-family: var(--font-body);
     font-size: var(--fs-sm);
     width: clamp(6rem, 10vw, 10rem);
@@ -80,7 +78,13 @@ body{
     border: 0px solid white;
     border-radius: 12px;
 }
-
+.nav-container a{
+    color: var(--color-text);
+    text-decoration: none;
+}
+.nav-button a{
+    color: var(--color-extra);
+}
 .page-title{
     color: var(--color-text);
     grid-column: 1/span 3;
