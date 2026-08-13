@@ -10,7 +10,7 @@ const events = {
 };
 
 for(let i=0; i<numberOfbuttons; i++){
-    document.querySelectorAll("button")[i].addEventListener("click", function (){
+    document.querySelectorAll(".options button")[i].addEventListener("click", function (){
         let buttonInner = this.innerHTML;
         switch (buttonInner){
             case "Janeiro a Março":
