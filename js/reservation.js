@@ -1,5 +1,5 @@
 
-const numberOfbuttons = document.querySelectorAll("button").length;
+const numberOfbuttons = document.querySelectorAll(".season").length;
 let pContent = document.querySelector(".description p");
 
 const events = {
@@ -10,23 +10,33 @@ const events = {
 };
 
 for(let i=0; i<numberOfbuttons; i++){
-    document.querySelectorAll(".options button")[i].addEventListener("click", function (){
+    document.querySelectorAll(".season")[i].addEventListener("click", function (){
         let buttonInner = this.innerHTML;
-        switch (buttonInner){
-            case "Janeiro a Março":
-                pContent.innerHTML = events.janeiro;
-                break;
-            case "Abril a Junho":
-                pContent.innerHTML =events.abril;
-                break;
-            case "Julho a Setembro":
-                pContent.innerHTML = events.julho;
-                break;
-            case "Outubro a Dezembro":
-                pContent.innerHTML = events.outubro;
-                break;
-            default: alert("Erro!");
-        }
+        updateP(buttonInner);
+        addButtonAnimation(this);
     });
 }
+function updateP(buttonInner){
+    switch (buttonInner){
+        case "Janeiro a Março":
+            pContent.innerHTML = events.janeiro;
+            break;
+        case "Abril a Junho":
+            pContent.innerHTML =events.abril;
+            break;
+        case "Julho a Setembro":
+            pContent.innerHTML = events.julho;
+            break;
+        case "Outubro a Dezembro":
+            pContent.innerHTML = events.outubro;
+            break;
+        default: alert("Erro!");
+    }
+}
+function addButtonAnimation(buttonClick){
+    document.querySelectorAll(".season").forEach(element => {
+        element.classList.remove("pressed");
+    });
+    buttonClick.classList.add("pressed");
 
+}
