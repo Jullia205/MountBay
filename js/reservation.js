@@ -36,7 +36,7 @@ function updateP(buttonInner){
 function addButtonAnimation(buttonClick){
     document.querySelectorAll(".season").forEach(element => {
         element.classList.remove("pressed");
+        element.removeAttribute("id");
     });
     buttonClick.classList.add("pressed");
-
 }

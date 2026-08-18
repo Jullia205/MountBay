@@ -140,10 +140,18 @@ body{
     padding-left: 0;
 }
 .description{
+    background-color: var(--color-text-sec);
     width: 80%;
     margin-top: 1em;
     margin-left: 1em;
-
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-text-sec);
+    border-radius: 10px;
+}
+.description p{
+    text-align: justify;
+    margin: 0 1em;
 }
 .season{
     background: none;
@@ -156,6 +164,9 @@ body{
     font-size: var(--fs-sm);
 
 }
+
+/* Reservation area*/
+
 .pricing{
     grid-column: 24/ span 10;
     grid-row: 1/ span 5;
@@ -166,7 +177,7 @@ body{
     padding: 1rem;
 
 }
-.pricing h4{
+.pricing h3{
     font-size: var(--fs-lg);
     font-weight: 500;
     line-height: 2.0;
@@ -178,7 +189,31 @@ body{
     height: 100%;
 }
 
+.form ul{
+    font-size: var(--fs-md);
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    margin: 0;
+    padding-left: 0;
+    gap: 1em;
+}
+.form ul li{
+    list-style: none;
+
+}
+.form ul p{
+    color: var(--color-secondary);
+    margin: 0;
+}
+
 /*Animation CSS down here*/
+
+#first-op{
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
 
 .pressed{
     background-color: var(--color-secondary);

@@ -38,7 +38,7 @@
             </div>
             <div class="info-climate">
                 <div class="options">
-                    <button class="season">Janeiro a Março</button>
+                    <button class="season" id="first-op">Janeiro a Março</button>
                     <button class="season">Abril a Junho</button>
                     <button class="season">Julho a Setembro</button>
                     <button class="season">Outubro a Dezembro</button>
@@ -50,17 +50,50 @@
             </div>
         </section>
         <section class="pricing">
-            <div id="form">
+            <div class="form">
+                <h3>Agende sua estadia</h3>
+                <h4>Serviços extras:</h4>
+                <ul>
+                    <li>Limpeza</li>
+                    <p>•</p>
+                    <li>Locomoção</li>
+                    <p>•</p>
+                    <li>Lanches</li>
+                    </ul>
+                <p>Por <strong> $116</strong> a diária</p>
+
                 <div class="dates">
-                    <div class="date-field">
-                        <label for="check-in">Check In</label>
-                        <input type="date" id="check-in" name="check-in">
+                    <div>
+                        <span class="label">Check In</span>
+                        <span class="value">11/09/2023</span>
                     </div>
-                    <div class="date-field">
-                        <label for="check-out">Check Out</label>
-                        <input type="date" id="check-out" name="check-out">
+                    <div>
+                        <span class="label">Check Out</span>
+                        <span class="value">20/09/2023</span>
                     </div>
                 </div>
+
+                <div class="guests">
+                    <span class="label">Guests</span>
+                    <select>
+                        <option>3 Guest</option>
+                    </select>
+                </div>
+
+                <h5>Cancellation Polices</h5>
+
+                <div class="cancellation-option">
+                    <p>Non-Refundable - <strong>$116 Total</strong></p>
+                </div>
+
+                <div class="cancellation-option">
+                    <p>Refundable - <strong>$126 Total</strong></p>
+                    <p class="note">Free cancellation before sep21, after that, the reservation is non-refundable.</p>
+                </div>
+
+                <p class="total">Total Before Taxes: <strong>$116</strong></p>
+
+                <button class="reserve-btn">Reserve</button>
             </div>
         </section>
     </main>
