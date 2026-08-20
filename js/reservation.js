@@ -1,5 +1,5 @@
 
-const numberOfbuttons = document.querySelectorAll(".season").length;
+const buttonSeason = document.querySelectorAll(".season").length;
 let pContent = document.querySelector(".description p");
 
 const events = {
@@ -9,15 +9,25 @@ const events = {
     outubro: "Com a chegada do outono, as temperaturas ficam mais amenas e a região entra em um período de celebrações e eventos especiais. Feiras, festivais culturais e atividades relacionadas às festas de fim de ano tornam os últimos meses do ano especialmente movimentados. É uma época agradável para explorar a cidade e aproveitar a atmosfera festiva antes de retornar ao conforto do hotel."
 };
 
-for(let i=0; i<numberOfbuttons; i++){
+const buttonAdd =  document.querySelectorAll(".add-btn").length;
+let totalContent = document.querySelector("#final-price")
+let price = 90;
+const prices = {
+    limpeza: 50,
+    locomocao: 40,
+    lanches: 100,
+    reembolso: 126
+}
+
+for(let i=0; i<buttonSeason; i++){
     document.querySelectorAll(".season")[i].addEventListener("click", function (){
-        let buttonInner = this.innerHTML;
-        updateP(buttonInner);
-        addButtonAnimation(this);
+        let seasonInner = this.innerHTML;
+        updateP(seasonInner);
+        seasonButtonAnimation(this);
     });
 }
-function updateP(buttonInner){
-    switch (buttonInner){
+function updateP(seasonInner){
+    switch (seasonInner){
         case "Janeiro a Março":
             pContent.innerHTML = events.janeiro;
             break;
@@ -33,10 +43,41 @@ function updateP(buttonInner){
         default: alert("Erro!");
     }
 }
-function addButtonAnimation(buttonClick){
+function seasonButtonAnimation(buttonClick){
     document.querySelectorAll(".season").forEach(element => {
         element.classList.remove("pressed");
         element.removeAttribute("id");
     });
     buttonClick.classList.add("pressed");
+}
+
+for(let i=0; i<buttonAdd; i++){
+    document.querySelectorAll(".add-btn")[i].addEventListener("click", function(){
+        let addNumber = i;
+        updateTotal(addNumber);
+        addButtonAnimation(this);
+    })
+}
+
+function updateTotal(addNumber){
+    switch(addNumber){
+        case 0:
+            updatePrice(prices.limpeza);
+            break
+        case 1:
+            updatePrice(prices.locomocao)
+            break
+        case 2:
+            updatePrice(prices.lanches);
+            break
+        case 3:
+            updatePrice(prices.reembolso)
+            break
+        default: alert("Erro")
+    }
+}
+function updatePrice(value){
+    price = price+value;
+    let newText = "R$"+" "+price;
+    totalContent.textContent=newText;
 }

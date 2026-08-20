@@ -184,12 +184,12 @@ body{
     color: var(--color-extra);
     margin: 0;
 }
-.form{
+.reserve-form{
     width: 100%;
     height: 100%;
 }
 
-.form ul{
+.reserve-form ul{
     font-size: var(--fs-md);
     font-weight: 500;
     display: flex;
@@ -199,13 +199,123 @@ body{
     padding-left: 0;
     gap: 1em;
 }
-.form ul li{
+.reserve-form ul li{
     list-style: none;
 
 }
-.form ul p{
+.reserve-form ul p{
     color: var(--color-secondary);
     margin: 0;
+}
+.add-btn{
+    width: 6%;
+    background-color: var(--color-outline);
+    color: var(--color-text);
+    border: var(--color-outline) solid 1px;
+    border-radius: 24px;
+    padding: 1px 0px;
+}
+
+.reserve-dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid var(--color-outline);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.reserve-dates > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.reserve-dates .label {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+}
+
+.reserve-dates .value {
+    font-size: var(--fs-sm);
+    color: var(--color-extra);
+}
+
+.reserve-guests, .cancellation-option{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border: 1px solid var(--color-outline);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.reserve-guests .label {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+}
+
+.reserve-guests select {
+    border: none;
+    font-size: var(--fs-md);
+    background: transparent;
+}
+
+.reserve-form h5 {
+    font-size: var(--fs-md);
+    font-weight: 500;
+    margin: 1rem 0 0.5rem;
+}
+
+
+.cancellation-option p {
+    margin: 0;
+    font-size: var(--fs-md);
+}
+.cancellation-option{
+    flex-direction: row;
+   margin-bottom: 0;
+   justify-content: space-between;
+}
+.note {
+    font-size: var(--fs-sm);
+    color: var(--color-extra);
+    margin-top: 0.25rem;
+    text-align: justify;
+}
+.p1{
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+}
+.p2{
+    border-radius: 0 0 8px 8px;
+}
+
+.add-btn .c{
+    width: 8%;
+}
+
+.reserve-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fs-md);
+    font-weight: 500;
+    margin: 1rem 0;
+}
+#final-price{
+    font-weight: bold;
+}
+.reserve-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: var(--fs-md);
+    cursor: pointer;
 }
 
 /*Animation CSS down here*/
