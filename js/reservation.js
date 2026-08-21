@@ -54,30 +54,49 @@ function seasonButtonAnimation(buttonClick){
 for(let i=0; i<buttonAdd; i++){
     document.querySelectorAll(".add-btn")[i].addEventListener("click", function(){
         let addNumber = i;
-        updateTotal(addNumber);
-        addButtonAnimation(this);
+        let type = this.innerHTML;
+        priceButtonAnimation(this,type);
+        updateTotal(addNumber,type);
     })
 }
 
-function updateTotal(addNumber){
+function updateTotal(addNumber,type){
     switch(addNumber){
         case 0:
-            updatePrice(prices.limpeza);
+            updatePrice(prices.limpeza,type);
             break
         case 1:
-            updatePrice(prices.locomocao)
+            updatePrice(prices.locomocao,type);
             break
         case 2:
-            updatePrice(prices.lanches);
+            updatePrice(prices.lanches,type);
             break
         case 3:
-            updatePrice(prices.reembolso)
+            updatePrice(prices.reembolso,type);
             break
         default: alert("Erro")
     }
 }
-function updatePrice(value){
-    price = price+value;
+function updatePrice(value,type){
+    if(type==="+"){
+        price = price+value;
+    }
+    else{
+        price = price-value;
+    }
     let newText = "R$"+" "+price;
     totalContent.textContent=newText;
+}
+function priceButtonAnimation(buttonClick, type){
+    if(type==="+"){
+        type=false;
+        buttonClick.classList.add(".add-pressed");
+        buttonClick.innerHTML="-";
+    }
+    else{
+        buttonClick.classList.remove(".add-pressed");
+        buttonClick.innerHTML="+";
+        type=true;
+    }
+
 }

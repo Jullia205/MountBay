@@ -329,3 +329,7 @@ body{
     background-color: var(--color-secondary);
     color: var(--color-text);
 }
+.add-pressed{
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
