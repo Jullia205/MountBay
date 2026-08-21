@@ -98,5 +98,4 @@ function priceButtonAnimation(buttonClick, type){
         buttonClick.innerHTML="+";
         type=true;
     }
-
 }

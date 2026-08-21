@@ -237,7 +237,10 @@ body{
     font-weight: 500;
 }
 
-.reserve-dates .value {
+.reserve-dates input {
+    cursor: pointer;
+    border: none;
+    background: none;
     font-size: var(--fs-sm);
     color: var(--color-extra);
 }
@@ -259,8 +262,14 @@ body{
 
 .reserve-guests select {
     border: none;
+    font-family: var(--font-body);
     font-size: var(--fs-md);
     background: transparent;
+}
+.reserve-guests select option{
+    font-size: var(--fs-md);
+    font-family: var(--font-body);
+
 }
 
 .reserve-form h5 {
@@ -314,7 +323,9 @@ body{
     color: white;
     border: none;
     border-radius: 8px;
+    font-family: var(--font-title);
     font-size: var(--fs-md);
+    letter-spacing: 0.1rem;
     cursor: pointer;
 }
 
