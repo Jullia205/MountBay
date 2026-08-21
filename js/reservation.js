@@ -90,11 +90,11 @@ function updatePrice(value,type){
 function priceButtonAnimation(buttonClick, type){
     if(type==="+"){
         type=false;
-        buttonClick.classList.add(".add-pressed");
+        buttonClick.classList.add("pressed");
         buttonClick.innerHTML="-";
     }
     else{
-        buttonClick.classList.remove(".add-pressed");
+        buttonClick.classList.remove("pressed");
         buttonClick.innerHTML="+";
         type=true;
     }
