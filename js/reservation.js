@@ -1,7 +1,33 @@
 
+// PARTE QUE COLOCA LIMITE NO CAMPO DE DATA 
+const dataHoje = new Date;
+let dataAnoSeg = new Date;
+dataAnoSeg.setFullYear(dataHoje.getFullYear()+1);
+
+let dataTexto = dataHoje.toISOString().split("T");
+let dataTextoSeg = dataAnoSeg.toISOString().split("T"); //o T tá no meio da string, a data fica só na primeira parte
+let dataCheckIn = document.querySelector("#check-in");
+dataCheckIn.setAttribute("min", dataTexto[0]);
+dataCheckIn.setAttribute("max", dataTextoSeg[0]);
+
+let dataCheckOut = document.querySelector("#check-out");
+dataCheckIn.addEventListener("change", function (){
+
+    let dataAmanha = new Date(dataCheckIn.value);
+    dataAmanha.setDate(dataAmanha.getDate()+1);
+
+    let dataAnoSegAm = new Date()
+    dataAnoSegAm.setFullYear(dataAmanha.getFullYear()+1)
+
+    let dataTextoAm = dataAmanha.toISOString().split("T")
+    let dataTextoSegAm = dataAnoSegAm.toISOString().split("T")
+
+    dataCheckOut.setAttribute("min", dataTextoAm[0]);
+    dataCheckOut.setAttribute("max", dataTextoSegAm[0]);
+})
+// BOTOES DE ÉPOCA
 const buttonSeason = document.querySelectorAll(".season").length;
 let pContent = document.querySelector(".description p");
-
 const events = {
     janeiro: "Os primeiros meses do ano trazem temperaturas mais amenas e dias tranquilos, ideais para explorar a região com mais calma. Durante esse período, os visitantes podem aproveitar eventos culturais, exposições e festivais locais, além de passeios ao ar livre nos dias de clima agradável. É uma ótima época para quem prefere uma estadia mais tranquila e temperaturas confortáveis.",
     abril: "A primavera marca a chegada de dias mais ensolarados e temperaturas agradáveis, tornando esse período perfeito para atividades ao ar livre. A região ganha vida com feiras, eventos culturais, apresentações e festivais sazonais. É também uma excelente época para conhecer os pontos turísticos locais e aproveitar restaurantes e espaços ao ar livre.",
@@ -9,6 +35,7 @@ const events = {
     outubro: "Com a chegada do outono, as temperaturas ficam mais amenas e a região entra em um período de celebrações e eventos especiais. Feiras, festivais culturais e atividades relacionadas às festas de fim de ano tornam os últimos meses do ano especialmente movimentados. É uma época agradável para explorar a cidade e aproveitar a atmosfera festiva antes de retornar ao conforto do hotel."
 };
 
+// BOTOES DE ADICIONAR SERVICOS
 const buttonAdd =  document.querySelectorAll(".add-btn").length;
 let totalContent = document.querySelector("#final-price")
 let price = 90;
@@ -19,6 +46,7 @@ const prices = {
     reembolso: 126
 }
 
+// FUNCOES DOS BOTOES 
 for(let i=0; i<buttonSeason; i++){
     document.querySelectorAll(".season")[i].addEventListener("click", function (){
         let seasonInner = this.innerHTML;
