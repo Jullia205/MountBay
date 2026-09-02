@@ -1,3 +1,19 @@
+//Dados de cada cabana
+class Room {
+    constructor(img1, mainTitle, price,quartos) {
+        this.img1 = img1;
+        this.mainTitle = mainTitle;
+        this.price = price;
+        this.quartos = quartos;
+        this.servicesP = {limpeza: 50,locomocao: 40,lanches: 100,reembolso: 126}
+    }
+}
+
+let room1 = new Room("cabana_casal.jpg","Cabana de Casal", 90, "1 quarto - 1 cama");
+let room2 = new Room("cabana_grupo.jpg","Cabana Compartilhada", 100,"1 quarto - 4 camas");
+let room3 = new Room("cabana_familiar.jpg","Cabana Familiar", 110,"2 quartos - 4 camas");
+
+//Funcionalidades gerais da página
 
 // PARTE QUE COLOCA LIMITE NO CAMPO DE DATA 
 const dataHoje = new Date;
@@ -25,6 +41,7 @@ dataCheckIn.addEventListener("change", function (){
     dataCheckOut.setAttribute("min", dataTextoAm[0]);
     dataCheckOut.setAttribute("max", dataTextoSegAm[0]);
 })
+
 // BOTOES DE ÉPOCA
 const buttonSeason = document.querySelectorAll(".season").length;
 let pContent = document.querySelector(".description p");
@@ -37,14 +54,8 @@ const events = {
 
 // BOTOES DE ADICIONAR SERVICOS
 const buttonAdd =  document.querySelectorAll(".add-btn").length;
-let totalContent = document.querySelector("#final-price")
+let totalContent = document.querySelector("#final-price");
 let price = 90;
-const prices = {
-    limpeza: 50,
-    locomocao: 40,
-    lanches: 100,
-    reembolso: 126
-}
 
 // FUNCOES DOS BOTOES 
 for(let i=0; i<buttonSeason; i++){
@@ -102,7 +113,7 @@ function updateTotal(addNumber,type){
         case 3:
             updatePrice(prices.reembolso,type);
             break
-        default: alert("Erro")
+        default: alert("Erro");
     }
 }
 function updatePrice(value,type){
@@ -127,3 +138,5 @@ function priceButtonAnimation(buttonClick, type){
         type=true;
     }
 }
+
+//MUDANDO AS CABANAS
